@@ -5,4 +5,7 @@ const unsplashApiUrl = `https://api.unsplash.com/photos/random?query=weatherDesc
 const changeDescription = "weatherDescription"
 const noCityMess = "no city with such a name!"
 const noCityToAdd = "no city to add"
-module.exports = {apiKey, apiUrl, apiKeyPhoto, unsplashApiUrl, changeDescription, noCityMess, noCityToAdd}
+const noCities = "there is no cities saved in the DB!"
+const CantDeleteMess = "can not delete this city"
+const alreadyAdded = "this city is already added!"
+module.exports = {apiKey, apiUrl, apiKeyPhoto, unsplashApiUrl, changeDescription, noCityMess, noCityToAdd, noCities, CantDeleteMess, alreadyAdded}
