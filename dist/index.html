@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link type="text/css" rel="stylesheet" href="./materialize-css/dist/css/materialize.min.css" media="screen,projection"/>
+    <script src="https://kit.fontawesome.com/2e697dc3dc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div>
+            <i id="refresh" class="fa-solid fa-arrow-rotate-right"></i>
+            <input id="cityName" type="text" placeholder="City">
+            <button id="searchCity" class="button-17" role="button">Search</button>
+        </div>
+        <div class="weather">
+        </div>
+    </div>
+
+    <script id="weather-template" type="text/x-handlebars-template">
+        <section class="vh-100 d-flex justify-content-center align-items-center">
+            <div class="container py-5 h-100">
+        
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-8 col-lg-6 col-xl-4">
+        
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <div class="d-flex">
+                                    {{#if isSaved}}
+                                    <i id="add" class="fas fa-square-minus"></i>
+                                    {{else}}
+                                    <i id="add" class="fa-solid fa-square-plus"></i>
+                                    {{/if}}
+                                    <div id={{name}} class="cityName">{{name}}</div>
+                                </div>
+                                <div class="d-flex flex-column mt-5 mb-4">
+                                    <h6 class="temperature display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{temperature}}°C </h6>
+                                    <span class="condition small" style="color: #868B94">{{condition}}</span>
+                                </div>
+                        
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src={{conditionPic}} width="100px"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+        
+            </div>
+        </section>
+        
+   </script>
+
+   <script type="text/javascript" src="./materialize-css/dist/js/materialize.min.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="config.js"></script>
+    <script src="weather.js"></script>
+    <script src="render.js"></script>
+    <script src="main.js"></script> 
+</body>
+</html>
