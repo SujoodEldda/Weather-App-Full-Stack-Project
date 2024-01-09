@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const weatherServer = require('../weatherApiServer')
-const dbServer = require('../weatherDBServer')
+const weatherAPIServer = require('../weatherApiServer')
+const DBServer = require('../weatherDBServer')
 const {noCityMess, noCityToAdd, noCities, CantDeleteMess} = require('../../config')
+
+const dbServer = new DBServer()
+const weatherServer = new weatherAPIServer()
 
 router.get('/cities/:name',async function(req,res){
     try{

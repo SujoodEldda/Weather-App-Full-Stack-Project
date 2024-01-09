@@ -1,18 +1,23 @@
 const Weather = require('./model/weather')
 
-const deleteData = async function(cityName){
-    const deletedCity = await Weather.findOneAndDelete({ name: cityName })
-    return deletedCity
+class DBServer{
+
+    async deleteData(cityName){
+        const deletedCity = await Weather.findOneAndDelete({ name: cityName })
+        return deletedCity
+    }
+    
+    async getData(){
+        const cities = await Weather.find({})
+        return cities
+    }
+    
+    async saveData(city){
+        const newCity = new Weather(city)
+        newCity.save()
+        return newCity
+    }
+
 }
 
-const getData = async function(){
-    const cities = await Weather.find({})
-    return cities
-}
-
-const saveData = async function(city){
-    const newCity = new Weather(city)
-    newCity.save()
-    return newCity
-}
-module.exports = {deleteData, getData, saveData}
+module.exports = DBServer
