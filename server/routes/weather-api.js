@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const weatherAPIServer = require('../weatherApiServer')
 const DBServer = require('../weatherDBServer')
-const {noCityMess, noCityToAdd, noCities, CantDeleteMess} = require('../../config')
+const {noCityMess, noCityToAdd, noCities, CantDeleteMess} = require('dotenv').config()
 
 const dbServer = new DBServer()
 const weatherServer = new weatherAPIServer()

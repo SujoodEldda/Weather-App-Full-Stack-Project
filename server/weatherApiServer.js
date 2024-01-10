@@ -2,7 +2,8 @@ const axios = require('axios')
 const cityWeather = require('./model/cityWeather')
 const DBServer = require("./weatherDBServer")
 const utility = require("./utility")
-const {apiUrl, apiKeyPhoto, unsplashApiUrl, changeDescription, alreadyAdded} = require('../config')
+require('dotenv').config()
+const {apiUrl, unsplashApiUrl, changeDescription, alreadyAdded} = process.env
 
 const dbServer = new DBServer()
 class weatherAPIServer{

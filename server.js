@@ -2,9 +2,10 @@ const express = require('express')
 const app = express()
 const api = require('./server/routes/weather-api')
 const path = require('path')
+const dbManager = require("./server/weatherDBServer")
 
-const mongoose = require('mongoose')
-mongoose.connect("mongodb://127.0.0.1:27017/weather_DB").catch((err)=> console.log(err))
+const dbServer = new dbManager()
+dbServer.connectToDB()
 
 app.use(express.static(path.join(__dirname, 'dist')))
 app.use(express.static(path.join(__dirname, 'node_modules')))
