@@ -2,9 +2,9 @@ const Weather = require('./model/weather')
 const mongoose = require('mongoose')
 
 class DBServer{
-    
+
     connectToDB(){
-        mongoose.connect("mongodb://127.0.0.1:27017/weather_DB")
+        mongoose.connect(process.env.MONGODB_URI||"mongodb://127.0.0.1:27017/weather_DB")
             .catch((err)=> console.log(err))
     }
 
