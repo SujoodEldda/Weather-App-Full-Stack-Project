@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use('/weather', api)
 
-const port = "weatherapp-hlbw.onrender.com/"
+const port = 3000
 app.listen(process.env.PORT || port, function () {
     console.log(`Running on port ${port}`)
 })
