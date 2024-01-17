@@ -11,7 +11,7 @@ class Weather{
     }
 
     async getCityData(name){
-        const newData = await $.get(`https://weatherapp-hlbw.onrender.com/weather/cities/${name}`)
+        const newData = await $.get(`weather/cities/${name}`)
         if(newData.error){
             alert(newData.error)
         }
